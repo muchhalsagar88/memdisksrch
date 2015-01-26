@@ -237,20 +237,20 @@ void select_search(InputArgs input_params)
 {
 	char* search_method = input_params->search_method;
 
-	if(strcmp(search_method, "--mem-lin") == 0)
+	if(strcmp(search_method, "--mem-seq") == 0)
 		in_memory_sequential_search(input_params);
 	else if(strcmp(search_method, "--mem-bin") == 0)
 		in_memory_binary_search(input_params);
-	else if(strcmp(search_method, "--disk-lin") == 0)
+	else if(strcmp(search_method, "--sec-seq") == 0)
 		on_disk_sequential_search(input_params);
-	else if(strcmp(search_method, "--disk-bin") == 0)
+	else if(strcmp(search_method, "--sec-bin") == 0)
 		on_disk_binary_search(input_params);
 	else
 		printf("Unrecognized search method. Enter:\n"
-			"--mem-lin for In memory Linear search\n"
+			"--mem-seq for In memory Linear search\n"
 			"--mem-bin for In memory Binary search\n"
-			"--disk-lin for Disk-based Linear search\n"
-			"--disk-bin for Disk-based Binary search\n");
+			"--sec-seq for Disk-based Linear search\n"
+			"--sec-bin for Disk-based Binary search\n");
 }
 
 int main(int argc, char *argv[])
